@@ -1,6 +1,3 @@
-export default function hasValuesFromArray(setInput, arrayInput) {
-  if (Array.isArray(setInput) && Array.isArray(arrayInput)) {
-    return arrayInput.every((element) => setInput.has(element));
-  }
-  return false;
+export default function hasValuesFromArray(set, array) {
+  return array.every((element) => set.has(element));
 }
