@@ -11,3 +11,11 @@ interface IDirectors extends ITeacher {
     numberOfReports: number;
 }
 
+interface IprintTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+
+export default function printTeacher(firstName: string, lastName: string): string {
+    return `${firstName.charAt(0)}. ${lastName}`;
+}
