@@ -52,3 +52,17 @@ export function createEmployee(salary: number | string): ITeacherInterface | IDi
         return new Director();
     }
 }
+
+
+export function isDirector(employee: ITeacherInterface | IDirectorInterface): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+}
+
+
+export function executeWork(employee: ITeacherInterface | IDirectorInterface): string {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    } else {
+        return employee.workTeacherTasks();
+    }
+}
